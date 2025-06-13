@@ -1,0 +1,35 @@
+<div class="product-page-container">
+  <div class="title-area">
+    <h1>DISCOVER OUR PRODUCTS</h1>
+  </div>
+  <div class="toolbar">
+    <div class="items-count">{{ productTotal }} ITEMS</div>
+
+    <div class="filter-toggle" (click)="toggleFilter()">
+      {{ showFilter ? '← HIDE FILTER' : '→ SHOW FILTER' }}
+    </div>
+
+    <div class="sort-dropdown">
+      <select [(ngModel)]="selectedSort" (change)="onSortChange()">
+        <option value="recommended">Recommended</option>
+        <option value="newest">Newest First</option>
+        <option value="priceHighToLow">Price: High to Low</option>
+        <option value="priceLowToHigh">Price: Low to High</option>
+        <option value="popular">Popular</option>
+      </select>
+    </div>
+  </div>
+  <div class="main-section">
+    <app-product-sidebar
+      *ngIf="showFilter"
+      (idealForChanged)="onIdealForChanged($event)">
+    </app-product-sidebar>
+
+    <app-product-listing
+      class="flex-grow-1"
+      [sortBy]="selectedSort"
+      [idealFor]="selectedIdealFor"
+      (productCount)="getItemCount($event)">
+    </app-product-listing>
+  </div>
+</div>

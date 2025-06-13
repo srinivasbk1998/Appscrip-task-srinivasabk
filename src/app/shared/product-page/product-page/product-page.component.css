@@ -1,0 +1,55 @@
+.product-page-container {
+  padding: 40px;
+}
+
+.title-area {
+  text-align: center;
+}
+
+.title-area h1 {
+  font-size: 32px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  font-size: 14px;
+  color: #888;
+  align-items: center;
+}
+
+.sort-dropdown select {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.sort-dropdown select:hover {
+  border-color: #888;
+}
+
+.main-section {
+  display: flex;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sort-dropdown select {
+    width: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+.sidebar {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.filter-group {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.dropdown-options {
+  margin-top: 10px;
+  padding-left: 10px;
+}

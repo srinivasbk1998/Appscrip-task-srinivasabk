@@ -1,0 +1,29 @@
+<div class="sidebar">
+  <div>
+    <input type="checkbox" id="customizable" />
+    <label for="customizable">CUSTOMIZABLE</label>
+  </div>
+
+  <div *ngFor="let filter of filters" class="filter-group">
+    <div *ngIf="filter === 'IDEAL FOR'" (click)="toggleIdealFor()" class="filter-header">
+      <strong>{{ filter }}</strong>
+      <span class="arrow">{{ showIdealForOptions ? '▲' : '▼' }}</span>
+    </div>
+
+    <div *ngIf="filter !== 'IDEAL FOR'">
+      <strong>{{ filter }}</strong><br />
+      <small>All</small>
+    </div>
+    <div *ngIf="filter === 'IDEAL FOR' && showIdealForOptions" class="dropdown-options">
+      <div *ngFor="let option of idealForOptions">
+        <input
+          type="radio"
+          name="idealFor"
+          [value]="option"
+          [checked]="selectedIdealFor === option"
+          (change)="onSelectIdealFor(option)" />
+        {{ option }}
+      </div>
+    </div>
+  </div>
+</div>
